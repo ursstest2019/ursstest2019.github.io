@@ -11,31 +11,35 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://docs.google.com/uc?export=download&amp;id=1L3hSl6kIZY9w2dCjIQ6KVhmzZXdH30_x</string>
+					<string>https://docs.google.com/uc?export=download&amp;id=1GbDUPsfDiEqxlU1p5DwNndF1B86OMadJ</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>needs-shine</key>
+					<false/>
+					<key>url</key>
+					<string>../large.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>display-image</string>
+					<key>needs-shine</key>
+					<false/>
 					<key>url</key>
-					<string>https://www.elbasupport.at/pfp/download/ios/smallBankDirekt.png</string>
+					<string>../small.png</string>
 				</dict>
-                <dict>
-                    <key>kind</key>
-                    <string>full-size-image</string>
-                    <key>url</key>
-                    <string>https://www.elbasupport.at/pfp/download/ios/largeBankDirekt.png</string>
-                </dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>at.rsg.pfp.PFPBankDirekt.ent</string>
+				<string>at.rsg.pfp.PFP.ent</string>
 				<key>bundle-version</key>
 				<string>0.1</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>bankdirekt.at</string>
+				<string>Mein ELBA</string>
 			</dict>
 		</dict>
 	</array>
