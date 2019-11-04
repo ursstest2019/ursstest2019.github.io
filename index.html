@@ -1,134 +1,281 @@
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title></title>
+<!-- saved from url=(0040)https://www.elbasupport.at/pfp/index.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PFP</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+<!--
+*    {
+margin:0; padding:0 
+}
 
-</head>
+#head {
+height:180px;
+background-color:#01416f; 
+color:#fff;
+font-size: 150px;
+text-align:center;
+font-family: Tahoma, Verdana, sans serif;
+}
 
-<style>
+#login {
+text-transform:lowercase;	
+background-color: transparent;
+font-family: Tahoma, Verdana, sans serif;
+font-size: 45px;
+background-color:#FFFFFF; 
+position: relative;
+margin-top: 10px;
+border-color: white;
+border-width: 3px;
+border-style: solid;
+border-radius: 15px;
+padding: 15px; 
+width: 700px;
+margin-top: 20%;
+}
 
-body {
+input[type=reset], input[type=text], input[type=password] {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+	padding: 12px 20px;
+    margin: 10px 10;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-radius: 15px;
+	font-size: 45px;
+	width: 600px;
+}
 
-	background-image: url('grunge_patterns.jpg');
-	background-attachment: fixed;
-	color: #333;
+input[type=submit] {
+	width: 600px;
+    border: none;
+    cursor: pointer;
+	padding: 12px 20px;
+    margin: 10px 10;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-radius: 15px;
+	font-size: 45px;
+}
+	
+#ueberschrift1 {
+position: relative;
+top: 60px;
+font-weight: bold;
+font-size: 150px;
+font-family: Tahoma, Verdana, sans serif;
+}
+
+#ueberschrift2 {
+position: relative;
+top: 30px;
+left: 4px;
+font-size: 43px;
+font-family: Tahoma, Verdana, sans serif;
+}
+
+
+#anderungsdatum {
+text-decoration:none;
+position: relative;
+top: -50px;
+font-size: 25px;
+font-family: Tahoma, Verdana, sans serif;
+}
+
+#downloadimage {
+position: relative;
+top: 50px;
+left: -250px;
+}
+
+#downloadimage img {
+    width: 15%;
+    height: auto;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+#downloadtext {
+position: relative;
+top: -50px;
+margin-top: 1px;
+font-size: 55px;
+font-family: Tahoma, Verdana, sans serif;
+}
+
+#download {
+    position: relative;
+    top: -150px;
+    text-decoration:none;
+    cursor: pointer;
+    width: 70%;
+	height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Tahoma, Verdana, sans serif;
+	text-align:center;
+    font-size: 50px;
+    margin-top: 200px;
+    border: 5px solid;
+    border-radius: 15px;
+    border-top-color: #000;
+    border-left-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+}
+
+a, a:visited {
+    color: inherit;
+	text-decoration:none;
 }
 
 .box {
-	border-radius: 3px;
-	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+  position: relative;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.lightbox {
-	zoom: 1.5;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(10, 10, 10, 0.8);
-	text-align: center;
-	margin: auto;
-
+.box select {
+  background-color: #ffffff;
+  color: black;
+  padding: 42px;
+  width: 450px;
+  border: none;
+  font-size: 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
 }
 
-div.horizontal {
-	display: flex;
-	justify-content: center;
-	height: 100%;
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
 }
 
-div.vertical {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-::-webkit-input-placeholder {
-   color: #955;
-   text-align: center;
+.box select option {
+  padding: 100px;
 }
 
-::-moz-placeholder {
-   color: #955;
-   text-align: center;
+#Raiffeisen, #PrivatBank, #BankDirekt, #Hypo, #Vkb{
+display: none;
 }
-
-:-ms-input-placeholder {
-   color: #955;
-   text-align: center;
-}
-
 </style>
 
+<script>
+  function showOnChange(val) {
+    document.getElementById("Raiffeisen").style.display = "none";
+    document.getElementById("BankDirekt").style.display = "none";
+    document.getElementById("PrivatBank").style.display = "none";
+    document.getElementById("Hypo").style.display = "none";
+    document.getElementById("Vkb").style.display = "none";
+    document.getElementById(val).style.display = "block";
+  }
+</script>
+
+
+</head>
+ 
 <body>
 
-	<div id="loginbox" class="lightbox" >
-		<div class="horizontal">
-			<div class="vertical">
-				<div class="box">
-					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
-					<button id="loginbutton" type="button">Enter</button>
-					<p id="wrongPassword" style="display: none">wrong password</p>
-				</div>
-			</div>
-		</div>
+
+
+
+<!-- <div id="head">
+EMBA
+</div> -->
+
+
+
+<center>
+<div id="ueberschrift1">iOS PFP</div><br>
+<div id="ueberschrift2">Electronic Banking</div>
+<br>
+
+
+<!-- Login -->
+
+
+
+<!-- Download-Seite -->
+
+
+<br>
+
+        <div class="box"> 
+            <select name="" id="" onchange="showOnChange(this.value)"> 
+                <option> Mandant auswählen </option> 
+                <option value="Raiffeisen">Raiffeisen</option> 
+                <option value="BankDirekt">BankDirekt</option> 
+                <option value="PrivatBank">PrivatBank</option> 
+                <option value="Hypo">Hypo</option> 
+                <option value="Vkb">VKB</option> 
+            </select> 
+        </div> 
+
+	 <div id="Raiffeisen"> 
+             <div id="download">
+             <a href="itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBA.plist" onclick="javascript:window.location.href=&#39;itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBA.plist&#39;; return false;">
+             <div id="downloadimage"><img src="./index_files/large.png"></div><div id="downloadtext">1.11.2(2)</div>
+         <div id="anderungsdatum">11. November 2019 14:09:40</div>
+     </a></div>
+         </div>
+	 <div id="PrivatBank"> 
+             <div id="download">
+             <a href="itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAPrivatBank.plist" onclick="javascript:window.location.href=&#39;itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAPrivatBank.plist&#39;; return false;">
+              <div id="downloadimage"><img src="./index_files/largePrivatBank.png"></div> <div id="downloadtext">1.11.2(2)</div>
+         <div id="anderungsdatum">11. November 2019 14:09:07</div>
+     </a></div>
+	</div>
+	 <div id="BankDirekt"> 
+             <div id="download">
+             <a href="itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBABankDirekt.plist" onclick="javascript:window.location.href=&#39;itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBABankDirekt.plist&#39;; return false;">
+              <div id="downloadimage"><img src="./index_files/largeBankDirekt.png"></div> <div id="downloadtext">1.11.2(2)</div>
+         <div id="anderungsdatum">11. November 2019 14:10:19</div>
+     </a></div>
+	</div>
+	 <div id="Hypo"> 
+             <div id="download">
+             <a href="itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAHypo.plist" onclick="javascript:window.location.href=&#39;itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAHypo.plist&#39;; return false;">
+              <div id="downloadimage"><img src="./index_files/largeHypo.png"></div> <div id="downloadtext">1.11.2(2)</div>
+         <div id="anderungsdatum">11. November 2019 11:17:35</div>
+     </a></div>
+	</div>
+	 <div id="Vkb"> 
+             <div id="download">
+             <a href="itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAVkb.plist" onclick="javascript:window.location.href=&#39;itms-services://?action=download-manifest&amp;url=https://ursstest2019.github.io/index_files/MeinELBAVkb.plist&#39;; return false;">
+              <div id="downloadimage"><img src="./index_files/largeVkb.png"></div> <div id="downloadtext">1.11.2(2)</div>
+         <div id="anderungsdatum">11. November 2019 14:10:17</div>
+     </a></div>
 	</div>
 
 
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+</center>
 
 
-	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 
-	<script type="text/javascript">
-	"use strict";
-
-
-	function loadPage(pwd) {
-
-		var hash= pwd;
-		hash= Sha1.hash(pwd);
-		var url= hash + "/index.html";
-
-		$.ajax({
-			url : url,
-			dataType : "html",
-			success : function(data) {
-
-				window.location= url;
-
-			},
-			error : function(xhr, ajaxOptions, thrownError) {
-
-
-				parent.location.hash= hash;
-
-				//$("#wrongPassword").show();
-				$("#password").attr("placeholder","wrong password");
-				$("#password").val("");
-			}
-		});
-	}
-
-
-	$("#loginbutton").on("click", function() {
-		loadPage($("#password").val());
-	});
-	$("#password").keypress(function(e) {
-		if (e.which == 13) {
-
-			loadPage($("#password").val());
-		}
-	});
-	$("#password").focus();
-
-	</script>
-
-</body>
-</html>
+</body></html>
