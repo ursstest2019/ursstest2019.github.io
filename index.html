@@ -2,17 +2,17 @@
 	<head>
 		<title>Vibe check</title>
 		<h1 id="header">Neither iOS, nor Android.</h1>
-	<body onload="getMobileOperatingSystem()">
+	<body onload="getString()">
 		<script>
 			function getMobileOperatingSystem() {
 			  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 				  // Windows Phone must come first because its UA also contains "Android"
-				if (/Windows Phone/i.test(userAgent)) {
+				if (/windows phone/i.test(userAgent)) {
 					document.getElementById('header').innerHTML = 'Windows Phone xD';
 				}
 
-				if (/Android/i.test(userAgent)) {
+				if (/android/i.test(userAgent)) {
 					window.location = "sites/android.html";
 				}
 
@@ -20,6 +20,11 @@
 				if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 					window.location = "sites/ios.html";
 				}
+			}
+			
+			function getString() {
+				var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+				document.getElementById('header').innerHTML = userAgent;
 			}
 		</script>
 		
