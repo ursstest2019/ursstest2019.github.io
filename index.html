@@ -8,12 +8,12 @@
 			  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 				  // Windows Phone must come first because its UA also contains "Android"
-				if (/windows phone/i.test(userAgent)) {
+				if (/Windos Phone/i.test(userAgent)) {
 					return "Windows Phone";
 				}
 
-				if (/android/i.test(userAgent)) {
-					windows.location = "sites/android.html";
+				if (/Android/i.test(userAgent)) {
+					window.location = "sites/android.html";
 				}
 
 				// iOS detection from: http://stackoverflow.com/a/9039885/177710
