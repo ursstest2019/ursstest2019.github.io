@@ -9,6 +9,7 @@
 
 				  // Windows Phone must come first because its UA also contains "Android"
 				if (/windows phone/i.test(userAgent)) {
+<<<<<<< HEAD
 					document.getElementById('header').innerHTML = 'Windows Phone xD';
 					return;
 				}
@@ -16,6 +17,13 @@
 				if (/android/i.test(userAgent)) {
 					window.location = "sites/android.html";
 					return;
+=======
+					return "Windows Phone";
+				}
+
+				if (/android/i.test(userAgent)) {
+					windows.location = "sites/android.html";
+>>>>>>> parent of 2e1a368... Fixed vibe check
 				}
 
 				// iOS detection from: http://stackoverflow.com/a/9039885/177710
