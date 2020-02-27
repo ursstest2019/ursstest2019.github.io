@@ -1,37 +1,22 @@
 <html>
 	<head>
-		<title>Vibe check</title>
-		<h1 id="header">Neither iOS, nor Android.</h1>
-	<body onload="getMobileOperatingSystem()">
+		<title>Redirect to PFP</title>
+	<body onload="redirectPFP('https://dl.dropboxusercontent.com/s/t6mav7vmrbu7ojd/IP.txt')">
 		<script>
-			function getMobileOperatingSystem() {
-			  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-				  // Windows Phone must come first because its UA also contains "Android"
-				if (/windows phone/i.test(userAgent)) {
-					document.getElementById('header').innerHTML = 'Windows Phone xD';
-					return;
+			function redirectPFP(filePath) {
+				var result = null;
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET", filePath, false);
+				xmlhttp.send();
+				if (xmlhttp.status==200) {
+					result = xmlhttp.responseText;
 				}
-
-				if (/android/i.test(userAgent)) {
-					window.location = "sites/android.html";
-					return;
-				}
-
-				if (/android/i.test(userAgent)) {
-					windows.location = "sites/android.html";
-					return;
-				}
-
-				// iOS detection from: http://stackoverflow.com/a/9039885/177710
-				if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-					window.location = "sites/ios.html";
-					return;
-				}
+				window.location = result;
+				return;
 			}
 		</script>
 		
-		<button onclick="window.location = 'sites/android.html'">Android PFP</button>
-		<button onclick="window.location = 'sites/ios.html'">iOS PFP</button>
+		<button onclick="redirectPFP(https://dl.dropboxusercontent.com/s/t6mav7vmrbu7ojd/IP.txt)">Redirect manually</button>
+		<button onclick="window.location = 'https://dl.dropboxusercontent.com/s/t6mav7vmrbu7ojd/IP.txt'">Open txt file</button>
 	</body>
 </html>
